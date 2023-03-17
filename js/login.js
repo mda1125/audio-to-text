@@ -8,8 +8,8 @@ loginForm.addEventListener('submit', (e) => {
   const password = document.getElementById('password').value;
 
   // Replace these values with the desired username and password
-  const validUsername = 'admin';
-  const validPassword = 'password';
+  const validUsername = 'marc';
+  const validPassword = 'cgr.wtp6gua3BVA-vgf';
 
   if (username === validUsername && password === validPassword) {
     sessionStorage.setItem('authenticated', 'true');
