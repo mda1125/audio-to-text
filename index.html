@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Whisper Transcription</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Whisper Audio-to-Text Transcription</h1>
+    <input type="file" id="audioFile" accept="audio/mp3, audio/mp4, audio/mpeg, audio/mpga, audio/m4a, audio/wav">
+    <p id="errorMsg" class="error"></p>
+    <button id="transcribeBtn" disabled>Transcribe</button>
+    <div id="loadingIndicator" class="hidden">Transcribing...</div>
+    <div id="transcriptionResult" class="hidden">
+      <h2>Transcription:</h2>
+      <pre id="transcriptionText"></pre>
+      <button id="downloadBtn" class="hidden">Download</button>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
