@@ -15,9 +15,10 @@ module.exports = async (req, res) => {
       body: formData,
     });
 
-    if (!response.ok) {
-      throw new Error('Transcription failed');
-    }
+ if (!response.ok) {
+  console.error("Transcription failed:", response.status, response.statusText);
+  throw new Error('Transcription failed');
+}
 
     const result = await response.text();
     res.status(200).send(result);
