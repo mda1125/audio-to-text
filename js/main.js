@@ -40,6 +40,8 @@ async function transcribeAudio() {
   try {
     const formData = new FormData();
     formData.append('audio', file);
+    formData.append('model', 'whisper-1');
+
 
     // Fetch the API key from the serverless function
     const apiKeyResponse = await fetch('/api/getApiKey');
