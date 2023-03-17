@@ -39,7 +39,7 @@ async function transcribeAudio() {
 
   try {
     const formData = new FormData();
-    formData.append('audio', file);
+    formData.append('file', file);
     formData.append('model', 'whisper-1');
 
 
