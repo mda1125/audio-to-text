@@ -16,10 +16,10 @@ function handleFile() {
     showError("File size exceeds 25 MB");
     return;
   }
- if (!['audio/mp3', 'audio/mp4', 'audio/mpeg', 'audio/mpga', 'audio/m4a', 'audio/wav', 'audio/x-m4a'].includes(file.type)) {
-  showError("Unsupported file format");
-  return;
-}
+  if (!['audio/mp3', 'audio/mp4', 'audio/mpeg', 'audio/mpga', 'audio/m4a', 'audio/wav'].includes(file.type)) {
+    showError("Unsupported file format");
+    return;
+  }
   errorMsg.textContent = "";
   transcribeBtn.disabled = false;
 }
@@ -41,11 +41,13 @@ async function transcribeAudio() {
     formData.append('audio', file);
 
     // Replace with the actual Whisper API endpoint and your API key
-    const response = await fetch("/api/transcribe", {
-  method: "POST",
-  body: formData
-});
-
+    const response = await fetch("https://api.example.com/whisper/transcribe", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer YOUR_API_KEY"
+      },
+      body: formData
+    });
 
     if (!response.ok) throw new Error("Transcription failed");
 
