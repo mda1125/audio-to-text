@@ -41,13 +41,11 @@ async function transcribeAudio() {
     formData.append('audio', file);
 
     // Replace with the actual Whisper API endpoint and your API key
-    const response = await fetch("https://api.openai.com/v1/audio/translations", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer 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"
-      },
-      body: formData
-    });
+    const response = await fetch("/api/transcribe", {
+  method: "POST",
+  body: formData
+});
+
 
     if (!response.ok) throw new Error("Transcription failed");
 
