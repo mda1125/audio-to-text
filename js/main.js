@@ -41,7 +41,7 @@ async function transcribeAudio() {
     formData.append('audio', file);
 
     // Replace with the actual Whisper API endpoint and your API key
-    const response = await fetch("https://api.example.com/whisper/transcribe", {
+    const response = await fetch("https://api.openai.com/v1/audio/translations", {
       method: "POST",
       headers: {
         "Authorization": "Bearer YOUR_API_KEY"
