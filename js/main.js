@@ -44,7 +44,7 @@ async function transcribeAudio() {
     const response = await fetch("https://api.openai.com/v1/audio/translations", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer ${process.env.WHISPER_API_KEY}"
       },
       body: formData
     });
