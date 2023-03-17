@@ -41,11 +41,16 @@ async function transcribeAudio() {
     const formData = new FormData();
     formData.append('audio', file);
 
-    // Replace with the actual Whisper API endpoint and your API key
+    // Fetch the API key from the serverless function
+    const apiKeyResponse = await fetch('/api/getApiKey');
+    const apiKeyData = await apiKeyResponse.json();
+    const apiKey = apiKeyData.apiKey;
+
+    // Replace with the actual Whisper API endpoint
     const response = await fetch("https://api.openai.com/v1/audio/translations", {
       method: "POST",
       headers: {
-        "Authorization": 'Bearer ${WHISPER_API_KEY}'
+        "Authorization": `Bearer ${apiKey}`
       },
       body: formData
     });
