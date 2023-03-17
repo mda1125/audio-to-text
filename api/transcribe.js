@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     const response = await fetch('https://api.openai.com/v1/audio/translations', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer ${process.env.WHISPER_API_KEY}',
       },
       body: formData,
     });
