@@ -16,10 +16,15 @@ function handleFile() {
     showError("File size exceeds 25 MB");
     return;
   }
-  if (!['audio/mp3', 'audio/mp4', 'audio/mpeg', 'audio/mpga', 'audio/m4a', 'audio/wav', 'audio/x-m4a'].includes(file.type)) {
-  showError("Unsupported file format");
-  return;
-}
+
+  // Check the file extension
+  const fileExtension = file.name.split('.').pop().toLowerCase();
+  const supportedExtensions = ['mp3', 'mp4', 'mpeg', 'mpga', 'm4a', 'wav'];
+
+  if (!supportedExtensions.includes(fileExtension)) {
+    showError("Unsupported file format");
+    return;
+  }
 
   errorMsg.textContent = "";
   transcribeBtn.disabled = false;
