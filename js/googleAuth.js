@@ -1,3 +1,11 @@
+function init() {
+  gapi.load('auth2', function() {
+    gapi.auth2.init({
+      client_id: 'YOUR_CLIENT_ID',
+    });
+  });
+}
+
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
 
