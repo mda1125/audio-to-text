@@ -2,6 +2,10 @@ function init() {
   gapi.load('auth2', function () {
     gapi.auth2.init({
       client_id: '856066838706-e3njg99uk5bj9i1c0g5rff7q8ukf0lm5.apps.googleusercontent.com',
+    }).then(() => {
+      const auth2 = gapi.auth2.getAuthInstance();
+      const signInButton = document.getElementById('signInButton');
+      signInButton.addEventListener('click', () => auth2.signIn().then(onSignIn));
     });
   });
 }
@@ -14,7 +18,8 @@ function onSignIn(googleUser) {
 
   // Show the transcription components and the Sign out button
   document.querySelector('.transcription').style.display = 'block';
-  document.querySelector('button[onclick="signOut()"]').style.display = 'inline';
+  document.getElementById('signOutButton').style.display = 'inline';
+  document.getElementById('signInButton').style.display = 'none';
 }
 
 function signOut() {
@@ -24,7 +29,8 @@ function signOut() {
 
     // Hide the transcription components and the Sign out button
     document.querySelector('.transcription').style.display = 'none';
-    document.querySelector('button[onclick="signOut()"]').style.display = 'none';
+    document.getElementById('signOutButton').style.display = 'none';
+    document.getElementById('signInButton').style.display = 'inline';
   });
 }
 
