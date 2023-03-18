@@ -3,29 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whisper Audio Transcription</title>
-  <script src="https://apis.google.com/js/api:client.js?onload=init"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="856066838706-e3njg99uk5bj9i1c0g5rff7q8ukf0lm5.apps.googleusercontent.com">
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Whisper Transcription</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="googleAuth.js" defer></script>
 </head>
 <body>
-  <h1>Whisper Audio Transcription</h1>
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  <button onclick="signOut()" style="display: none;">Sign out</button>
+  <div class="container">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <button onclick="signOut()" style="display:none;">Sign out</button>
 
-  <div class="transcription" style="display: none;">
-    <input type="file" id="audioFile" accept="audio/mp3, audio/mp4, audio/mpeg, audio/mpga, audio/m4a, audio/wav, audio/x-m4a">
-    <p id="errorMsg"></p>
-    <button id="transcribeBtn" disabled>Transcribe</button>
-    <div id="loadingIndicator" class="hidden">Transcribing...</div>
-    <div id="transcriptionResult" class="hidden">
-      <pre id="transcriptionText"></pre>
-      <button id="downloadBtn" class="hidden">Download</button>
+    <div class="transcription" style="display:none;">
+      <!-- Transcription components go here -->
     </div>
   </div>
 
-  <script src="js/googleAuth.js"></script>
-  <script src="js/main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
