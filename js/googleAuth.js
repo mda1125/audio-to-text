@@ -5,12 +5,16 @@ function init() {
     }).then(() => {
       const auth2 = gapi.auth2.getAuthInstance();
       const signInButton = document.getElementById('signInButton');
-      signInButton.addEventListener('click', () => auth2.signIn().then(onSignIn));
+      signInButton.addEventListener('click', () => {
+        console.log("Signing in...");
+        auth2.signIn().then(onSignIn).catch(error => console.log("Sign-in error:", error));
+      });
     });
   });
 }
 
 function onSignIn(googleUser) {
+  console.log("Sign-in successful");
   const id_token = googleUser.getAuthResponse().id_token;
 
   // Verify the token with your server, and then store it in a secure way
