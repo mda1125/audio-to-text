@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Whisper Transcription</title>
+  <title>Audio Transcription</title>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Whisper Audio-to-Text Transcription</h1>
-    <input type="file" id="audioFile" accept="audio/mp3, audio/mp4, audio/mpeg, audio/mpga, audio/m4a, audio/wav, audio/x-m4a">
-    <p id="errorMsg" class="error"></p>
-    <button id="transcribeBtn" disabled>Transcribe</button>
-    <div id="loadingIndicator" class="hidden">Transcribing...</div>
-    <div id="transcriptionResult" class="hidden">
-      <h2>Transcription:</h2>
-      <pre id="transcriptionText"></pre>
-      <button id="downloadBtn" class="hidden">Download</button>
-    </div>
+  <div id="loginBtn" style="display:none;">
+    <button>Login</button>
   </div>
-  <script src="js/main.js"></script>
+  <div id="logoutBtn" style="display:none;">
+    <button>Logout</button>
+  </div>
+  <div id="transcriptionComponents" style="display:none;">
+    <!-- Your existing transcription components go here -->
+  </div>
+  <script src="auth.js"></script>
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', login);
+    document.getElementById('logoutBtn').addEventListener('click', logout);
+  </script>
 </body>
-  <script src="js/checkAuth.js"></script>
 </html>
