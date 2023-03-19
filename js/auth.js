@@ -1,5 +1,3 @@
-import Auth0Client from '@auth0/auth0-spa-js';
-
 const auth0 = new Auth0Client({
   domain: 'dev-ziwl0iyni3fd16ww.us.auth0.com', // Replace with your Auth0 domain
   client_id: '7h0BYhwPNJAlnVGtwBFIU0YAbW6sAPBQ', // Replace with your Auth0 client ID
