@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Transcription</title>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="loginBtn" style="display:none;">
-    <button>Login</button>
+  <div id="app">
+    <div id="authButtons">
+      <button id="loginBtn" class="auth-btn hidden">Log in</button>
+      <button id="logoutBtn" class="auth-btn hidden">Log out</button>
+    </div>
+    <div id="transcriptionContainer" class="hidden">
+      <h1>Audio Transcription</h1>
+      <p id="errorMsg" class="error-msg"></p>
+      <input type="file" id="audioFile" accept="audio/*">
+      <button id="transcribeBtn" disabled>Transcribe</button>
+      <div id="loadingIndicator" class="hidden">Loading...</div>
+      <div id="transcriptionResult" class="hidden">
+        <h2>Transcription</h2>
+        <pre id="transcriptionText"></pre>
+        <button id="downloadBtn" class="hidden">Download</button>
+      </div>
+    </div>
   </div>
-  <div id="logoutBtn" style="display:none;">
-    <button>Logout</button>
-  </div>
-  <div id="transcriptionComponents" style="display:none;">
-    <!-- Your existing transcription components go here -->
-  </div>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
   <script src="js/auth.js"></script>
-  <script>
-    document.getElementById('loginBtn').addEventListener('click', login);
-    document.getElementById('logoutBtn').addEventListener('click', logout);
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
