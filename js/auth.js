@@ -1,5 +1,5 @@
 const auth0 = new Auth0Client({
-  domain: 'audio-to-text-wine.vercel.app',
+  domain: 'dev-ziwl0iyni3fd16ww.us.auth0.com',
   client_id: '7h0BYhwPNJAlnVGtwBFIU0YAbW6sAPBQ',
   redirect_uri: 'https://audio-to-text-wine.vercel.app',
   cacheLocation: 'localstorage',
