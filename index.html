@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Transcription</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19.0/auth0-spa-js.production.js"></script>
-  <script type="module" src="js/auth.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Whisper Transcription</title>
 </head>
 <body>
-  <header>
-    <div id="authButtons" class="hidden">
-      <button id="loginBtn" class="hidden">Login</button>
-      <button id="logoutBtn" class="hidden">Logout</button>
+  <div class="container">
+    <h1>Whisper Audio-to-Text Transcription</h1>
+    <input type="file" id="audioFile" accept="audio/mp3, audio/mp4, audio/mpeg, audio/mpga, audio/m4a, audio/wav, audio/x-m4a">
+    <p id="errorMsg" class="error"></p>
+    <button id="transcribeBtn" disabled>Transcribe</button>
+    <div id="loadingIndicator" class="hidden">Transcribing...</div>
+    <div id="transcriptionResult" class="hidden">
+      <h2>Transcription:</h2>
+      <pre id="transcriptionText"></pre>
+      <button id="downloadBtn" class="hidden">Download</button>
     </div>
-  </header>
-  <main>
-    <div id="transcriptionContainer" class="hidden">
-      <!-- Transcription components go here -->
-    </div>
-  </main>
+  </div>
+  <script src="js/main.js"></script>
 </body>
+  <script src="js/checkAuth.js"></script>
 </html>
