@@ -5,28 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Transcription</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/auth.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <div id="app">
-    <div id="authButtons">
-      <button id="loginBtn" class="auth-btn hidden">Log in</button>
-      <button id="logoutBtn" class="auth-btn hidden">Log out</button>
+  <header>
+    <div id="authButtons" class="hidden">
+      <button id="loginBtn" class="hidden">Login</button>
+      <button id="logoutBtn" class="hidden">Logout</button>
     </div>
+  </header>
+  <main>
     <div id="transcriptionContainer" class="hidden">
-      <h1>Audio Transcription</h1>
-      <p id="errorMsg" class="error-msg"></p>
-      <input type="file" id="audioFile" accept="audio/*">
-      <button id="transcribeBtn" disabled>Transcribe</button>
-      <div id="loadingIndicator" class="hidden">Loading...</div>
-      <div id="transcriptionResult" class="hidden">
-        <h2>Transcription</h2>
-        <pre id="transcriptionText"></pre>
-        <button id="downloadBtn" class="hidden">Download</button>
-      </div>
+      <!-- Transcription components go here -->
     </div>
-  </div>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/main.js"></script>
+  </main>
 </body>
 </html>
